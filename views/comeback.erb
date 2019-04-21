@@ -1,0 +1,12 @@
+<%unless @message.empty?%>
+    <%array_message = @message.split("  ")%>
+    <%array_message.each do |sentence|%>
+        <h5><%=sentence%></h5>
+    <%end%>
+<%else%>
+    <h5>No hay tareas en esta categoría</h5>
+<%end%>
+
+<form action="/menu" method="post">
+    <input type="submit" value="Regresar al menú">
+</form>

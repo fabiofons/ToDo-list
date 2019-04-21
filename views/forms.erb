@@ -1,0 +1,15 @@
+<h2>Tus tareas</h2>
+
+<form action="/">
+    <p>Ingresa el <i>"Título"</i> si vas a <strong>Crear</strong> una tarea, o <i>"ID"</i> para <strong>Completar</strong>, o <strong>Borrar</strong> una tarea</p>
+    <select name="show">
+        <option value="incomplete">Ver la lista de tareas sin completar</option>
+        <option value="done">Ver la lista de tareas completadas</option>
+        <option value="create">Crear tareas </option>
+        <option value="finish">Completar tareas</option>
+        <option value="delete">Borrar tareas</option>
+    </select>
+    <label >Título / Id: <input type="text" name="id" placeholder="Ingresa el Título o ID"></label><br>
+    <br>    
+    <input type="submit" value="Realizar">
+</form>
