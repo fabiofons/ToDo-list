@@ -1,0 +1,35 @@
+<%unless @message.empty?%>
+    <%array_message = @message.split("  ")%>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th style="padding-left:50px;">Title</th>
+                <th>Completada</td>
+                <th style="padding-left:30px;">Acción</td>
+            </tr>                
+            <%array_message.each do |sentence|%>
+                <%data = sentence.split(',')%>
+                    <tr>
+                        <td><%=data[0]%></td>
+                        <td style="text-align:center; padding-left:50px;"><%=data[1]%></td>
+                        <td style="text-align:center;"><%=data[2]%></td>
+                        <td style="padding-left:30px;">
+                            <form action="/update" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="<%=data[0]%>">
+                                <input type="submit" value="Actualizar" style="cursor:pointer;">
+                            </form>
+                            <form action="/delete" method="post" style="display:inline;">
+                                <input type="hidden" name="id" value="<%=data[0]%>">
+                                <input type="submit" value="Eliminar" style="cursor:pointer;">
+                            </form>                            
+                        </td>
+                    </tr>
+            <%end%>            
+        </table>
+<%else%>
+    No hay tareas en esta categoría<br>
+<%end%>
+<br>
+<form action="/menu" method="post">
+    <input type="submit" value="Regresar al menú" style="cursor:pointer;">
+</form>
